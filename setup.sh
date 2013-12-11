@@ -1,0 +1,2 @@
+# zsh
+ln -s .zshrc ~/
