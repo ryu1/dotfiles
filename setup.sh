@@ -1,2 +1,2 @@
 # zsh
-ln -s .zshrc ~/
+ln -s ~/git/dotfiles/.zshrc ~/.zshrc
