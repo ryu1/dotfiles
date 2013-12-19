@@ -1,0 +1,13 @@
+[user]
+	name = 石塚隆一
+	email = jeremy.hillary.boob@gmail.com
+[core]
+	excludesfile = /Users/ryu/.gitignore_global
+[difftool "sourcetree"]
+	cmd = /usr/local/bin/twdiff --resume --reverse --wait \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[mergetool]
+	keepBackup = true

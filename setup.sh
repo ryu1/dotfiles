@@ -7,3 +7,6 @@ ln -s ${DOTFILES_DIR}/.zshrc ~/.zshrc
 ln -s ${DOTFILES_DIR}/.vimrc ~/.vimrc
 ln -s ${DOTFILES_DIR}/.vim ~/.vim
 
+# git
+ln -s ${DOTFILES_DIR}/.gitconfig ~/.gitconfig
+ln -s ${DOTFILES_DIR}/.gitignore_global ~/.gitignore_global
