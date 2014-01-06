@@ -175,9 +175,31 @@ nnoremap l <Right>
 set virtualedit+=block
 
 
-"-------------------------------------------------------------------------------" 編集関連 Edit"-------------------------------------------------------------------------------" insertモードを抜けるとIMEオフset noimdisableset iminsert=0 imsearch=0set noimcmdlineinoremap <silent> <ESC> <ESC>:set iminsert=0<CR>
+"-------------------------------------------------------------------------------
+" 編集関連 Edit
+"-------------------------------------------------------------------------------
+" insertモードを抜けるとIMEオフ
+set noimdisable
+set iminsert=0 imsearch=0
+set noimcmdline
+inoremap <silent> <ESC> <ESC>:set iminsert=0<CR>
 
-" 括弧を自動補完"inoremap { {}<LEFT>"inoremap [ []<LEFT>"inoremap ( ()<LEFT>"inoremap " ""<LEFT>"inoremap ' ''<LEFT>"vnoremap { "zdi^V{<C-R>z}<ESC>"vnoremap [ "zdi^V[<C-R>z]<ESC>"vnoremap ( "zdi^V(<C-R>z)<ESC>"vnoremap " "zdi^V"<C-R>z^V"<ESC>"vnoremap ' "zdi'<C-R>z'<ESC>" 保存時に行末の空白を除去するautocmd BufWritePre * :%s/\s\+$//ge" 保存時にtabをスペースに変換する" autocmd BufWritePre * :%s/\t/  /ge
+" 括弧を自動補完
+"inoremap { {}<LEFT>
+"inoremap [ []<LEFT>
+"inoremap ( ()<LEFT>
+"inoremap " ""<LEFT>
+"inoremap ' ''<LEFT>
+"vnoremap { "zdi^V{<C-R>z}<ESC>
+"vnoremap [ "zdi^V[<C-R>z]<ESC>
+"vnoremap ( "zdi^V(<C-R>z)<ESC>
+"vnoremap " "zdi^V"<C-R>z^V"<ESC>
+"vnoremap ' "zdi'<C-R>z'<ESC>
+
+" 保存時に行末の空白を除去する
+autocmd BufWritePre * :%s/\s\+$//ge
+" 保存時にtabをスペースに変換する
+" autocmd BufWritePre * :%s/\t/  /ge
 
 
 "----------------------------------------------------
