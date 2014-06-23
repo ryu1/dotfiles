@@ -247,7 +247,7 @@ export PATH="$GOROOT/bin:$GOPATH/bin:$PATH"
 export PATH=${PATH}:~/Development/adt-bundle-mac-x86_64-20130917/sdk/platform-tools:~/Development/adt-bundle-mac-x86_64-20130917/sdk/tools
 
 # Gradle
-export GRADLE_HOME=/usr/local/Cellar/gradle/1.8
+export GRADLE_HOME=/usr/local/Cellar/gradle/1.12
 export PATH=$PATH:$GRADLE_HOME/bin
 export GRADLE_OPTS=-Dorg.gradle.daemon=true
 
