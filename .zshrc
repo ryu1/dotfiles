@@ -244,7 +244,7 @@ export PATH="$GOROOT/bin:$GOPATH/bin:$PATH"
 
 # Android SDK
 #export ANDROID_BIN=~/Development/adt-bundle-mac-x86_64-20130917/sdk/tools/android
-export PATH=${PATH}:~/Development/adt-bundle-mac-x86_64-20130917/sdk/platform-tools:~/Development/adt-bundle-mac-x86_64-20130917/sdk/tools
+export PATH=${PATH}:~/Development/adt-bundle-matcp://$(boot2docker ip 2>/dev/null):2375c-x86_64-20130917/sdk/platform-tools:~/Development/adt-bundle-mac-x86_64-20130917/sdk/tools
 
 # Gradle
 export GRADLE_HOME=/usr/local/Cellar/gradle/1.12
@@ -255,3 +255,7 @@ export GRADLE_OPTS=-Dorg.gradle.daemon=true
 export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
 alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
 alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+
+# docker
+export DOCKER_HOST=tcp://$(boot2docker ip 2>/dev/null):2375
+
