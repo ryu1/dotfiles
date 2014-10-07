@@ -277,13 +277,15 @@ function! s:LoadBundles()
 
   NeoBundle 'scrooloose/syntastic'
   let g:syntastic_enable_signs=1
+  let g:syntastic_error_symbol = '✗'
+  let g:syntastic_warning_symbol = '⚠'
   let g:syntastic_auto_loc_list=2
   "ファイルオープン時にはチェックをしない
   let g:syntastic_check_on_open = 0
   "ファイル保存時にはチェックを実施
   let g:syntastic_check_on_save = 1
   " JavaScriptのSyntaxチェックはjshint
-  let g:syntastic_javascript_checker = "jshint"
+  let g:syntastic_javascript_checkers = ['jshint']
  
   " ドキュメントジェネレータ
   NeoBundle 'heavenshell/vim-jsdoc'
