@@ -259,3 +259,5 @@ alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"
 # docker
 export DOCKER_HOST=tcp://$(boot2docker ip 2>/dev/null):2375
 
+# nodebrew
+export PATH=$HOME/.nodebrew/current/bin:$PATH
