@@ -249,6 +249,14 @@ function! s:LoadBundles()
 
   " NERDTreeを設定(コマンドモードで :NERDTree)
   NeoBundle 'scrooloose/nerdtree'
+  " ファイル指定で開かれた場合はNERDTreeは表示しない
+  if !argc()
+    autocmd vimenter * NERDTree|normal gg3j
+  endif
+  " F2で右にファイラ画面を表示したり閉じたりするなど
+  " nnoremap <f2> :NERDTreeToggle<CR>
+  " 最後に残ったウィンドウがNERDTREEのみのときはvimを閉じる
+  autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
   " autoclose
   NeoBundle 'Townk/vim-autoclose'
