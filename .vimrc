@@ -246,6 +246,56 @@ function! s:LoadBundles()
   "NeoBundle 'tpope/vim-surround'
   NeoBundle 'Shougo/unite.vim'
   NeoBundle 'Shougo/vimfiler.vim'
+
+  " NERDTreeを設定(コマンドモードで :NERDTree)
+  NeoBundle 'scrooloose/nerdtree'
+
+  " autoclose
+  NeoBundle 'Townk/vim-autoclose'
+
+  " Emmet
+  NeoBundle 'mattn/emmet-vim'
+
+  " quickrun
+  NeoBundle 'thinca/vim-quickrun'
+
+  " grep.vim
+  NeoBundle 'grep.vim'
+
+  " ...
+  " JavaScript関連
+  " ...
+  NeoBundle 'Shougo/neocomplete.vim'
+  NeoBundle 'moll/vim-node'
+  NeoBundle 'mattn/jscomplete-vim'
+  NeoBundle 'myhere/vim-nodejs-complete'
+  NeoBundle 'git://github.com/kchmck/vim-coffee-script.git'
+
+  autocmd FileType javascript :setl omnifunc=jscomplete#CompleteJS
+ 
+  NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}
+
+  NeoBundle 'scrooloose/syntastic'
+  let g:syntastic_enable_signs=1
+  let g:syntastic_auto_loc_list=2
+  "ファイルオープン時にはチェックをしない
+  let g:syntastic_check_on_open = 0
+  "ファイル保存時にはチェックを実施
+  let g:syntastic_check_on_save = 1
+  " JavaScriptのSyntaxチェックはjshint
+  let g:syntastic_javascript_checker = "jshint"
+ 
+  " ドキュメントジェネレータ
+  NeoBundle 'heavenshell/vim-jsdoc'
+ 
+  " node 用の辞書を追加します。C-x C-k で補完できます。
+  NeoBundle 'guileen/vim-node-dict'
+  au FileType javascript set dictionary+=$HOME/.vim/bundle/vim-node-dict/dict/node.dict
+
+  NeoBundle 'felixge/vim-nodejs-errorformat'
+
+  autocmd filetype coffee,javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
+
   " ...
   " 読み込んだプラグインの設定
   " ...
