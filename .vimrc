@@ -345,3 +345,11 @@ function! s:InitNeoBundle()
 endfunction
 
 call s:InitNeoBundle()
+
+" If there are uninstalled bundles found on startup,
+" this will conveniently prompt you to install them.
+NeoBundleCheck
+
+" splitしたときファイル・タイプを認識しないので。
+" filetype detect
+autocmd BufRead,BufNewFile * filetype detect
