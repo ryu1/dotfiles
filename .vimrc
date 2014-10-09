@@ -126,6 +126,17 @@ highlight StatusLine   term=NONE cterm=NONE ctermfg=black ctermbg=white
 "----------------------------------------------------
 " オートインデントを無効にする
 set noautoindent
+
+" 改行時に前の行のインデントを継続する
+" set autoindent
+
+" 改行時に入力された行の末尾に合わせて次の行のインデントを増減
+" set smartindent
+
+" 他の2つの方法よりも賢く動作し、設定することで異なるインデントスタイルにも対応できる。
+" set cindent
+
+
 " タブが対応する空白の数
 set tabstop=2
 " タブやバックスペースの使用等の編集操作をするときに、タブが対応する空白の数
@@ -258,7 +269,7 @@ function! s:LoadBundles()
   " 最後に残ったウィンドウがNERDTREEのみのときはvimを閉じる
   autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
-  " autoclose
+  " autoclose (bug: delete indent on newline)
   NeoBundle 'Townk/vim-autoclose'
 
   " Emmet
