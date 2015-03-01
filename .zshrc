@@ -257,7 +257,16 @@ alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
 alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
 
 # docker
-export DOCKER_HOST=tcp://$(boot2docker ip 2>/dev/null):2375
+export DOCKER_HOST=tcp://$(boot2docker ip 2>/dev/null):2376
+export DOCKER_CERT_PATH=~/.boot2docker/certs/boot2docker-vm
+export DOCKER_TLS_VERIFY=1
 
 # nodebrew
 export PATH=$HOME/.nodebrew/current/bin:$PATH
+
+# Python
+export PYENV_ROOT="${HOME}/.pyenv"
+if [ -d "${PYENV_ROOT}" ]; then
+    export PATH=${PYENV_ROOT}/bin:$PATH
+    eval "$(pyenv init -)"
+fi
