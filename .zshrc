@@ -238,7 +238,8 @@ export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="/usr/local/share/npm/bin:$PATH"
 
 # go
-export GOROOT="/usr/local/Cellar/go/1.1.2"
+#export GOROOT="/usr/local/Cellar/go/1.2"
+export GOROOT=/usr/local/opt/go/libexec
 export GOPATH="$HOME/go"
 export PATH="$GOROOT/bin:$GOPATH/bin:$PATH"
 
