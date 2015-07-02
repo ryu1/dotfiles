@@ -188,6 +188,9 @@ alias mkdir='mkdir -p'
 # sudo の後のコマンドでエイリアスを有効にする
 alias sudo='sudo '
 
+# brewでインストールしたgdbに別のエイリアスをふる
+alias ggdb=/usr/local/Cellar/gdb/7.9.1/bin/gdb
+
 # グローバルエイリアス
 alias -g L='| less'
 alias -g G='| grep'
