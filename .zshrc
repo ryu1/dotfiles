@@ -241,10 +241,32 @@ export PATH="/usr/local/heroku/bin:$PATH"
 export PATH="/usr/local/share/npm/bin:$PATH"
 
 # go
-#export GOROOT="/usr/local/Cellar/go/1.2"
-export GOROOT=/usr/local/opt/go/libexec
-export GOPATH="$HOME/go"
-export PATH="$GOROOT/bin:$GOPATH/bin:$PATH"
+#export GOROOT=/usr/local/opt/go/libexec
+#export GOPATH="$HOME/go"
+#export PATH="$GOROOT/bin:$GOPATH/bin:$PATH"
+
+# goenv(goof)
+#export GOENVHOME=$HOME/.goenvs
+#export GOENVTARGET=$HOME/.goenvtarget
+#export GOENVGOROOT=$HOME/.goenvgoroot
+#export GOROOT=$GOENVGOROOT/release
+#export PATH=$GOROOT/bin:$PATH
+
+#if [[ -r `which goenvwrapper.sh` ]]; then
+#    source `which goenvwrapper.sh`
+#else
+#    echo "WARNING: Can't find goenvwrapper.sh"
+#fi
+
+# wfarr/goenv
+#export PATH="$HOME/.goenv/bin:$PATH"
+#eval "$(goenv init -)"
+#export GOPATH="$HOME/go"
+#export PATH="$GOPATH/bin:$PATH"
+
+# cryptojuice/gobrew
+export PATH="$HOME/.gobrew/bin:$PATH"
+eval "$(gobrew init -)"
 
 # Android SDK
 #export ANDROID_BIN=~/Development/adt-bundle-mac-x86_64-20130917/sdk/tools/android
