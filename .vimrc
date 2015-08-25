@@ -288,7 +288,7 @@ function! s:LoadBundles()
   NeoBundle 'moll/vim-node'
   NeoBundle 'mattn/jscomplete-vim'
   NeoBundle 'myhere/vim-nodejs-complete'
-  NeoBundle 'git://github.com/kchmck/vim-coffee-script.git'
+  NeoBundle 'kchmck/vim-coffee-script.git'
 
   autocmd FileType javascript :setl omnifunc=jscomplete#CompleteJS
  
