@@ -227,7 +227,8 @@ set shortmess+=I
 "ファイル保存ダイアログの初期ディレクトリをバッファファイル位置に設定
 set browsedir=buffer
 "クリップボードをWindowsと連携
-set clipboard=unnamed
+#set clipboard=unnamed
+set clipboard+=unnamedplus,unnamed
 
 "モード表示
 set showmode
