@@ -35,7 +35,7 @@ set backupdir=~/.vim/vimbackup
 set directory=~/.vim/vimswap
 
 " バックアップを作成しないファイル名のパターン。
-set backupskip=/tmp/*,/private/tmp/*" 
+set backupskip=/tmp/*,/private/tmp/*"
 
 "----------------------------------------------------
 " 検索関係
@@ -175,7 +175,7 @@ if has("autocmd")
 endif
 
 "----------------------------------------------------
-" カーソル移動 
+" カーソル移動
 "----------------------------------------------------
 "左右のカーソル移動で行間移動可能にする。
 set whichwrap=b,s,<,>,[,]
@@ -227,7 +227,6 @@ set shortmess+=I
 "ファイル保存ダイアログの初期ディレクトリをバッファファイル位置に設定
 set browsedir=buffer
 "クリップボードをWindowsと連携
-#set clipboard=unnamed
 set clipboard+=unnamedplus,unnamed
 
 "モード表示
@@ -292,7 +291,7 @@ function! s:LoadBundles()
   NeoBundle 'kchmck/vim-coffee-script.git'
 
   autocmd FileType javascript :setl omnifunc=jscomplete#CompleteJS
- 
+
   " javascript code look good thanks a very nice syntax-aware highlighting.
   NeoBundleLazy 'jelera/vim-javascript-syntax', {'autoload':{'filetypes':['javascript']}}
 
@@ -317,10 +316,10 @@ function! s:LoadBundles()
   let g:syntastic_check_on_save=1
   " JavaScriptのSyntaxチェックはjshint(npm install -g jshint)
   let g:syntastic_javascript_checkers = ['jshint']
- 
+
   " ドキュメントジェネレータ
   NeoBundle 'heavenshell/vim-jsdoc'
- 
+
   " node 用の辞書を追加します。C-x C-k で補完できます。
   NeoBundle 'guileen/vim-node-dict'
   au FileType javascript set dictionary+=$HOME/.vim/bundle/vim-node-dict/dict/node.dict
@@ -343,11 +342,12 @@ function! s:InitNeoBundle()
       set runtimepath+=~/.vim/bundle/neobundle.vim/
     endif
     try
-      call neobundle#rc(expand('~/.vim/bundle/'))
+      call neobundle#begin(expand('~/.vim/bundle'))
       call s:LoadBundles()
+      call neobundle#end()
     catch
       call s:WithoutBundles()
-    endtry 
+    endtry
   else
     call s:WithoutBundles()
   endif
