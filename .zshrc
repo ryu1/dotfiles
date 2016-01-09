@@ -299,3 +299,7 @@ if [ -d "${PYENV_ROOT}" ]; then
     eval "$(pyenv init -)"
 fi
 
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/ryu/.sdkman"
+[[ -s "/Users/ryu/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/ryu/.sdkman/bin/sdkman-init.sh"
