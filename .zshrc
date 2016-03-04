@@ -299,6 +299,24 @@ if [ -d "${PYENV_ROOT}" ]; then
     eval "$(pyenv init -)"
 fi
 
+# To avoid the error of following .
+#
+# $ brew doctor
+# Warning: "config" scripts exist outside your system or Homebrew directories.
+# `./configure` scripts often look for *-config scripts to determine if
+# software packages are installed, and what additional flags to use when
+# compiling and linking.
+#
+# Having additional scripts in your path can confuse software installed via
+# Homebrew if the config script overrides a system or Homebrew provided
+# script of the same name. We found the following "config" scripts:
+#    /Users/ryu/.pyenv/shims/python-config
+#    /Users/ryu/.pyenv/shims/python2-config
+#    /Users/ryu/.pyenv/shims/python2.7-config
+#    /Users/ryu/.pyenv/shims/python3-config
+#    /Users/ryu/.pyenv/shims/python3.4-config
+#    /Users/ryu/.pyenv/shims/python3.4m-config
+alias brew="env PATH=${PATH/${HOME}\/\.pyenv\/shims:/} brew"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/ryu/.sdkman"
