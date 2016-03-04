@@ -270,7 +270,7 @@ eval "$(gobrew init -)"
 
 # Android SDK
 #export ANDROID_BIN=~/Development/adt-bundle-mac-x86_64-20130917/sdk/tools/android
-export PATH=${PATH}:~/Development/adt-bundle-matcp://$(boot2docker ip 2>/dev/null):2375c-x86_64-20130917/sdk/platform-tools:~/Development/adt-bundle-mac-x86_64-20130917/sdk/tools
+#export PATH=${PATH}:~/Development/adt-bundle-matcp://$(boot2docker ip 2>/dev/null):2375c-x86_64-20130917/sdk/platform-tools:~/Development/adt-bundle-mac-x86_64-20130917/sdk/tools
 
 # Gradle
 export GRADLE_HOME=/usr/local/Cellar/gradle/1.12
