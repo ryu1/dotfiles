@@ -299,6 +299,9 @@ if [ -d "${PYENV_ROOT}" ]; then
     eval "$(pyenv init -)"
 fi
 
+# Ruby
+eval "$(rbenv init -)"
+
 # To avoid the error of following .
 #
 # $ brew doctor
