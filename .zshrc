@@ -290,7 +290,9 @@ eval $(docker-machine env default --shell=zsh)
 
 
 # nodebrew
-export PATH=$HOME/.nodebrew/current/bin:$PATH
+export NODEBREW_ROOT=$HOME/.nodebrew
+export PATH=$NODEBREW_ROOT:$NODEBREW_ROOT/current/bin:$PATH
+
 
 # Python
 export PYENV_ROOT="${HOME}/.pyenv"
