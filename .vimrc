@@ -403,6 +403,7 @@ endif
 " Airline
 " brew upgrade ricty --vim-powerline --powerline
 " 2016/08/05
+
 set laststatus=2
 set showtabline=2 " 常にタブラインを表示
 set t_Co=256 " この設定がないと色が正しく表示されない
@@ -410,6 +411,13 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_idx_mode = 1
 let g:airline_theme='papercolor' "落ち着いた色調が好き
 let g:airline_powerline_fonts = 1
+
+"let g:airline_section_a = airline#section#create(['mode',' ','branch'])
+"let g:airline_section_b = airline#section#create_left(['ffenc','hunks','%f'])
+"let g:airline_section_c = airline#section#create(['filetype'])
+"let g:airline_section_x = airline#section#create(['%P'])
+"let g:airline_section_y = airline#section#create(['%B'])
+"let g:airline_section_z = airline#section#create_right(['%l','%c'])
 
 "End dein Scripts------------------------
 
