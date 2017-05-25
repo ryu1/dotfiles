@@ -120,6 +120,11 @@ match ZenkakuSpace /　/
 set statusline=%n\:%y%F\ \|%{(&fenc!=''?&fenc:&enc).'\|'.&ff.'\|'}%m%r%=<%l/%L:%p%%>
 " ステータスラインの色
 highlight StatusLine   term=NONE cterm=NONE ctermfg=black ctermbg=white
+" カレント行をハイライトする
+set cursorline
+highlight cursorline term=reverse cterm=reverse
+" カーソル位置をウィンドウの中心に保ってスクロールする
+set scrolloff=1000
 
 "----------------------------------------------------
 " インデント
