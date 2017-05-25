@@ -1,9 +1,23 @@
-# Created by newuser for 5.0.2
-# 少し凝った zshrc
+#
+# Executes commands at the start of an interactive session.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
 
-########################################
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
+# Customize to your needs...
+
 # 環境変数
 export LANG=ja_JP.UTF-8
+
+export ZPLUG_HOME=/usr/local/opt/zplug
+source $ZPLUG_HOME/init.zsh
+zplug "sorin-ionescu/prezto"
 
 
 # 色を使用出来るようにする
@@ -25,14 +39,14 @@ REPORTTIME=1
 # 1行表示
 # PROMPT="%~ %# "
 # 2行表示
-# PROMPT="%{${fg[red]}%}[%n@%m]%{${reset_color}%} %~
+#PROMPT="%{${fg[red]}%}[%n@%m]%{${reset_color}%} %~
 # %# "
-PROMPT='%n@%m:%c$ '
-RPROMPT=''
+#PROMPT='%n@%m:%c$ '
+#RPROMPT=''
 # カレントディレクトリのフルパス表示
 #RPROMPT="${RPROMPT}[%d] "
 # 時間表示
-RPROMPT="${RPROMPT}[%T] "
+#RPROMPT="${RPROMPT}[%T] "
 
 
 # 単語の区切り文字を指定する
@@ -208,8 +222,6 @@ elif which putclip >/dev/null 2>&1 ; then
     alias -g C='| putclip'
 fi
 
-
-
 ########################################
 # OS 別の設定
 case ${OSTYPE} in
@@ -332,3 +344,4 @@ export SDKMAN_DIR="/Users/ryu/.sdkman"
 export DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer
 alias symbolicatecrash="/Applications/Xcode.app/Contents/SharedFrameworks/DVTFoundation.framework/Versions/A/Resources/symbolicatecrash"
 test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
+
