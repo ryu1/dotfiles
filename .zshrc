@@ -327,4 +327,8 @@ alias brew="env PATH=${PATH/${HOME}\/\.pyenv\/shims:/} brew"
 export SDKMAN_DIR="/Users/ryu/.sdkman"
 [[ -s "/Users/ryu/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/ryu/.sdkman/bin/sdkman-init.sh"
 
+# Xcode
+## symbolicatecrash
+export DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer
+alias symbolicatecrash="/Applications/Xcode.app/Contents/SharedFrameworks/DVTFoundation.framework/Versions/A/Resources/symbolicatecrash"
 test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
