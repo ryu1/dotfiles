@@ -341,6 +341,7 @@ export SDKMAN_DIR="/Users/ryu/.sdkman"
 
 # Xcode
 ## symbolicatecrash
+### use `symbolicatecrash PATH/TO/input.crash PATH/TO/input.app.dSYM > PATH/TO/output.crash`
 export DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer
 alias symbolicatecrash="/Applications/Xcode.app/Contents/SharedFrameworks/DVTFoundation.framework/Versions/A/Resources/symbolicatecrash"
 test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
