@@ -18,6 +18,7 @@ export LANG=ja_JP.UTF-8
 export ZPLUG_HOME=/usr/local/opt/zplug
 source $ZPLUG_HOME/init.zsh
 zplug "sorin-ionescu/prezto"
+zplug load --verbose
 
 
 # 色を使用出来るようにする
