@@ -30,8 +30,9 @@ bindkey -e
 
 # ヒストリの設定
 HISTFILE=~/.zsh_history
-HISTSIZE=1000000
-SAVEHIST=1000000
+HISTTIMEFORMAT='%Y/%m/%d %H:%M:%S '
+HISTSIZE=10000
+SAVEHIST=10000
 
 # この秒数を超えたとき実行時間を表示する
 REPORTTIME=1
@@ -199,6 +200,8 @@ alias cp='cp -i'
 alias mv='mv -i'
 
 alias mkdir='mkdir -p'
+
+alias history='history -i -1000'
 
 # sudo の後のコマンドでエイリアスを有効にする
 alias sudo='sudo '
