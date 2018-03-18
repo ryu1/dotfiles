@@ -7,6 +7,7 @@ DOTFILES_DIR="/Users/ryu/git/dotfiles"
 # zsh
 ln -s ${DOTFILES_DIR}/.zshrc ~/.zshrc
 ln -s ${DOTFILES_DIR}/.zpreztorc ~/.zpreztorc
+
 zplug install
 ln -s $ZPLUG_HOME/repos/sorin-ionescu/prezto $HOME/.zprezto
 
@@ -25,3 +26,5 @@ ln -s ${DOTFILES_DIR}/.dein.toml ~/.dein.toml
 ln -s ${DOTFILES_DIR}/.gitconfig ~/.gitconfig
 ln -s ${DOTFILES_DIR}/.gitignore_global ~/.gitignore_global
 
+# homebrew
+ln -s ${DOTFILES_DIR}/Brewfile ~/Brewfile
