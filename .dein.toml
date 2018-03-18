@@ -7,3 +7,11 @@ repo = 'vim-airline/vim-airline'
 [[plugins]]
 repo = 'vim-airline/vim-airline-themes'
 
+[[plugins]]
+repo = 'flazz/vim-colorschemes'
+hook_add = '''
+  let g:hybrid_custom_term_colors = 1
+" let g:hybrid_reduced_contrast = 1
+  colorscheme hybrid
+  set background=dark
+'''
