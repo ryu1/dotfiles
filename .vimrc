@@ -406,7 +406,7 @@ endif
 
 
 " Airline
-" brew upgrade ricty --vim-powerline --powerline
+" brew install ricty --with-powerline
 " 2016/08/05
 
 set laststatus=2

@@ -3,3 +3,6 @@
 !.vim/bundle/neobundle.vim
 *.swp
 .vim/dein
+.prezto-setup.sh.un~
+*.sh~
+.vim/vimbackup
