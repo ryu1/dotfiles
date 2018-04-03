@@ -1,8 +1,8 @@
 [user]
-	name = 石塚隆一
+	name = Ryuichi Ishitsuka
 	email = jeremy.hillary.boob@gmail.com
 [core]
-	excludesfile = /Users/ryu/.gitignore_global
+	excludesfile = /Users/ryuichiishitsuka/.gitignore_global
 [difftool "sourcetree"]
 	cmd = /usr/local/bin/ksdiff -w \"$LOCAL\" \"$REMOTE\"
 	path = 
@@ -15,6 +15,9 @@
 	template = /Users/ryu/.stCommitMsg
 [http]
 	postBuffer = 1048576000
+  proxy = http://proxy.sonycity.sony.co.jp:10080
+[https]
+  proxy = http://proxy.sonycity.sony.co.jp:10080
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
