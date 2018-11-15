@@ -356,17 +356,22 @@ test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_in
 
 # PECO
 # brew install peco
-function peco-history-selection() {
-    BUFFER=`history -n 1 | tail -r  | awk '!a[$0]++' | peco`
-    # fc: event not found: -n というエラーが出る場合
-    # BUFFER=`\\history -n 1 | tail -r  | awk '!a[$0]++' | peco`
-    # Ubuntuの場合
-    # BUFFER=`\\history -n 1 | tac | awk '!a[$0]++' | peco`
+function peco-select-history() {
+    local tac
+    if which tac > /dev/null; then
+        tac="tac"
+    else
+        tac="tail -r"
+    fi
+    BUFFER=$(\history -n 1 | \
+        eval $tac | \
+        peco --query "$LBUFFER")
     CURSOR=$#BUFFER
-    zle reset-prompt }
+    zle clear-screen
+}
+zle -N peco-select-history
+bindkey '^r' peco-select-history
 
-zle -N peco-history-selection
-bindkey '^R' peco-history-selection
 
 ## OpenSSL
 # $ brea install openssl
