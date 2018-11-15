@@ -5,6 +5,10 @@
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
 
+# - Powerlevel9k AwesomeFont selection (must call before sourcing)
+POWERLEVEL9K_MODE='awesome-fontconfig'
+#POWERLEVEL9K_MODE='nerdfont-complete'
+
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
@@ -116,26 +120,26 @@ add-zsh-hook preexec _preexec_done_notifier
 
 ########################################
 # vcs_info
-
-autoload -Uz vcs_info
-zstyle ':vcs_info:*' formats '(%s)-[%b]'
-zstyle ':vcs_info:*' actionformats '(%s)-[%b|%a]'
-
-_precmd_vcs_info() {
-    psvar=()
-    LANG=en_US.UTF-8 vcs_info
-    [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
-}
-add-zsh-hook precmd _precmd_vcs_info
-
+#
+#autoload -Uz vcs_info
+#zstyle ':vcs_info:*' formats '(%s)-[%b]'
+#zstyle ':vcs_info:*' actionformats '(%s)-[%b|%a]'
+#
+#_precmd_vcs_info() {
+#    psvar=()
+#    LANG=en_US.UTF-8 vcs_info
+#    [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
+#}
+#add-zsh-hook precmd _precmd_vcs_info
+#
 #precmd () {
 #    psvar=()
 #    LANG=en_US.UTF-8 vcs_info
 #    [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
 #}
-
-RPROMPT="${RPROMPT}%1(v|%F{green}%1v%f|)"
-
+#
+#RPROMPT="${RPROMPT}%1(v|%F{green}%1v%f|)"
+#
 
 ########################################
 # オプション
@@ -387,4 +391,48 @@ bindkey '^R' peco-history-selection
 # For pkg-config to find openssl you may need to set:
 #   export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
 export PATH="/usr/local/opt/openssl/bin:$PATH"
+
+## Powerlevel9k
+#
+# Install Powerlevel9k for Prezto
+#
+# ```
+# $ git clone https://github.com/bhilburn/powerlevel9k.git  ~/.zprezto/modules/prompt/external/powerlevel9k
+# $ ln -s ~/.zprezto/modules/prompt/external/powerlevel9k/powerlevel9k.zsh-theme ~/.zprezto/modules/prompt/functions/prompt_powerlevel9k_setup
+# ```
+# Install fonts.
+#
+# ```
+# brew tap caskroom/fonts
+# brew cask install font-hack-nerd-font
+# brew cask install font-awesome-terminal-fonts
+# ```
+#
+# - Powerlevel9k theme configuration
+# - - Prompts
+
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon root_indicator dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status rbenv nvm time)
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+
+# - - dir
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
+POWERLEVEL9K_SHORTEN_DELIMITER=""
+POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
+
+# - - vcs
+POWERLEVEL9K_VCS_CLEAN_FOREGROUND='blue'
+POWERLEVEL9K_VCS_CLEAN_BACKGROUND='black'
+POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND='yellow'
+POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='black'
+POWERLEVEL9K_VCS_MODIFIED_FOREGROUND='red'
+POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='black'
+
+# - - status (level of description)
+# POWERLEVEL9K_STATUS_VERBOSE=false
+
+# - - time
+# POWERLEVEL9K_TIME_FORMAT="%D{%H:%M \uE868 %Y.%m.%d}"
+# POWERLEVEL9K_TIME_FORMAT="%D{%H:%M \uf017 %Y.%m.%d}"
+POWERLEVEL9K_TIME_FORMAT="%D{\uf017 %H:%M \uf073 %Y.%m.%d}"
 
