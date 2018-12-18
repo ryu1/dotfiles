@@ -6,3 +6,5 @@
 .prezto-setup.sh.un~
 *.sh~
 .vim/vimbackup
+*.un~
+.DS_Store
