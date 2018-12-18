@@ -255,10 +255,10 @@ export PATH=/usr/local/bin:$PATH
 # Homebrew Installer addition on 2012-11-08_at_00:01:43: adding an appropriate PATH variable for use with Homebrew.
 
 ### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+#export PATH="/usr/local/heroku/bin:$PATH"
 
 # npm
-export PATH="/usr/local/share/npm/bin:$PATH"
+#export PATH="/usr/local/share/npm/bin:$PATH"
 
 # go
 #export GOROOT=/usr/local/opt/go/libexec
@@ -285,8 +285,8 @@ export PATH="/usr/local/share/npm/bin:$PATH"
 #export PATH="$GOPATH/bin:$PATH"
 
 # cryptojuice/gobrew
-export PATH="$HOME/.gobrew/bin:$PATH"
-eval "$(gobrew init -)"
+#export PATH="$HOME/.gobrew/bin:$PATH"
+#eval "$(gobrew init -)"
 
 # Android SDK
 #export ANDROID_BIN=~/Development/adt-bundle-mac-x86_64-20130917/sdk/tools/android
@@ -310,19 +310,19 @@ eval $(docker-machine env default --shell=zsh)
 
 
 # nodebrew
-export NODEBREW_ROOT=$HOME/.nodebrew
-export PATH=$NODEBREW_ROOT:$NODEBREW_ROOT/current/bin:$PATH
+#export NODEBREW_ROOT=$HOME/.nodebrew
+#export PATH=$NODEBREW_ROOT:$NODEBREW_ROOT/current/bin:$PATH
 
 
 # Python
-export PYENV_ROOT="${HOME}/.pyenv"
-if [ -d "${PYENV_ROOT}" ]; then
-    export PATH=${PYENV_ROOT}/bin:$PATH
-    eval "$(pyenv init -)"
-fi
+#export PYENV_ROOT="${HOME}/.pyenv"
+#if [ -d "${PYENV_ROOT}" ]; then
+#    export PATH=${PYENV_ROOT}/bin:$PATH
+#    eval "$(pyenv init -)"
+#fi
 
 # Ruby
-eval "$(rbenv init -)"
+#eval "$(rbenv init -)"
 
 # To avoid the error of following .
 #
@@ -371,7 +371,6 @@ function peco-select-history() {
 }
 zle -N peco-select-history
 bindkey '^r' peco-select-history
-
 
 ## OpenSSL
 # $ brea install openssl
@@ -441,3 +440,14 @@ POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='black'
 # POWERLEVEL9K_TIME_FORMAT="%D{%H:%M \uf017 %Y.%m.%d}"
 POWERLEVEL9K_TIME_FORMAT="%D{\uf017 %H:%M \uf073 %Y.%m.%d}"
 
+
+# anyenv
+# - anyenv
+#   git clone https://github.com/riywo/anyenv ~/.anyenv
+#   mkdir -p $(anyenv root)/plugins
+#
+# - anyenv-update
+#   git clone https://github.com/znz/anyenv-update.git $(anyenv root)/plugins/anyenv-update
+#
+export PATH="$HOME/.anyenv/bin:$PATH"
+eval "$(anyenv init -)"
