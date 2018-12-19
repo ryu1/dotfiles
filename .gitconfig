@@ -7,7 +7,7 @@
 	ignorecase = false
 [difftool "sourcetree"]
 	cmd = /usr/local/bin/ksdiff -w \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /usr/local/bin/ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
 	trustExitCode = true
@@ -17,7 +17,6 @@
 	template = /Users/ryu/.stCommitMsg
 [http]
 	postBuffer = 1048576000
-
 [https]
 
 [filter "lfs"]
@@ -31,3 +30,6 @@
 	branch = auto
 [push]
 	default = simple
+[include]
+  path = ~/.gitconfig.local
+

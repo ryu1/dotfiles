@@ -1,0 +1,6 @@
+[http]
+#  proxy = http://proxy.sonycity.sony.co.jp:10080
+
+[https]
+#  proxy = http://proxy.sonycity.sony.co.jp:10080
+
