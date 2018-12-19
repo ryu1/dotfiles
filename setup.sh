@@ -37,5 +37,5 @@ ln -fs ${DOTFILES_DIR}/.dein.toml ~/.dein.toml
 # git
 ln -fs ${DOTFILES_DIR}/.gitconfig ~/.gitconfig
 ln -fs ${DOTFILES_DIR}/.gitignore_global ~/.gitignore_global
-ln -fs ${DOTFILES_DIR}/.gitconfig.local ~/.gitconfig.local
+cp -rf ${DOTFILES_DIR}/.gitconfig.local ~/.gitconfig.local
 
