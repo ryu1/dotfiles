@@ -426,3 +426,17 @@ let g:airline_powerline_fonts = 1
 
 "End dein Scripts------------------------
 
+" MacVim
+if has('gui_macvim')
+    set transparency=1
+    set showtabline=2
+    set imdisable
+    set antialias
+    set columns=200
+    set lines=80
+    set guioptions-=T
+    set nobackup
+    set guifont=Ricty\ Discord\ Regular\ for\ Powerline:h14
+
+    colorscheme papercolor
+endif
