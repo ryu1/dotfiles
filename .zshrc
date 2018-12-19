@@ -291,6 +291,10 @@ export PATH=/usr/local/bin:$PATH
 # Android SDK
 #export ANDROID_BIN=~/Development/adt-bundle-mac-x86_64-20130917/sdk/tools/android
 #export PATH=${PATH}:~/Development/adt-bundle-matcp://$(boot2docker ip 2>/dev/null):2375c-x86_64-20130917/sdk/platform-tools:~/Development/adt-bundle-mac-x86_64-20130917/sdk/tools
+export ANDROID_HOME=~/Library/Android
+export ANDROID_SDK_ROOT=$ANDROID_HOME/sdk;
+export PATH=$ANDROID_SDK_ROOT/platform-tools:$PATH;
+export PATH=$ANDROID_SDK_ROOT/emulator:$ANDROID_SDK_ROOT/tools:$PATH;
 
 # Gradle
 export GRADLE_HOME=/usr/local/Cellar/gradle/1.12
