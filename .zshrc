@@ -307,10 +307,13 @@ alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
 alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
 
 # docker
-export DOCKER_HOST=tcp://$(boot2docker ip 2>/dev/null):2376
-export DOCKER_CERT_PATH=~/.boot2docker/certs/boot2docker-vm
-export DOCKER_TLS_VERIFY=1
-eval $(docker-machine env default --shell=zsh)
+# brew cask install docker
+# open /Applications/Docker.app
+# curl -fLo ~/.zprezto/modules/completion/external/src/_docker https://raw.githubusercontent.com/docker/cli/master/contrib/completion/zsh/_docker
+#export DOCKER_HOST=tcp://$(boot2docker ip 2>/dev/null):2376
+#export DOCKER_CERT_PATH=~/.boot2docker/certs/boot2docker-vm
+#export DOCKER_TLS_VERIFY=1
+#eval $(docker-machine env default --shell=zsh)
 
 
 # nodebrew
@@ -455,3 +458,11 @@ POWERLEVEL9K_TIME_FORMAT="%D{\uf017 %H:%M \uf073 %Y.%m.%d}"
 #
 export PATH="$HOME/.anyenv/bin:$PATH"
 eval "$(anyenv init -)"
+
+# bash-completion
+# brew install bash-completion
+# [ -f $(brew --prefix)/etc/bash_completion ] && . $(brew --prefix)/etc/bash_completion
+
+# zsh-completions
+fpath=(/usr/local/share/zsh-completions $fpath)
+
