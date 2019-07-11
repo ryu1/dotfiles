@@ -1,4 +1,3 @@
-#
 # Executes commands at the start of an interactive session.
 #
 # Authors:
@@ -8,6 +7,7 @@
 # - Powerlevel9k AwesomeFont selection (must call before sourcing)
 POWERLEVEL9K_MODE='awesome-fontconfig'
 #POWERLEVEL9K_MODE='nerdfont-complete'
+#POWERLEVEL9K_MODE='awesome-patched'
 
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
@@ -357,9 +357,9 @@ export SDKMAN_DIR="/Users/ryu/.sdkman"
 # Xcode
 ## symbolicatecrash
 ### use `symbolicatecrash PATH/TO/input.crash PATH/TO/input.app.dSYM > PATH/TO/output.crash`
-export DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer
-alias symbolicatecrash="/Applications/Xcode.app/Contents/SharedFrameworks/DVTFoundation.framework/Versions/A/Resources/symbolicatecrash"
-test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
+#export DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer
+#alias symbolicatecrash="/Applications/Xcode.app/Contents/SharedFrameworks/DVTFoundation.framework/Versions/A/Resources/symbolicatecrash"
+#test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
 
 # PECO
 # brew install peco
@@ -423,8 +423,9 @@ export PATH="/usr/local/opt/openssl/bin:$PATH"
 # - - Prompts
 
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon root_indicator dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status rbenv nvm time)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status rbenv nvm nodeenv time)
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+NODE_VIRTUAL_ENV_DISABLE_PROMPT=1
 
 # - - dir
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=7
@@ -445,8 +446,9 @@ POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='black'
 # - - time
 # POWERLEVEL9K_TIME_FORMAT="%D{%H:%M \uE868 %Y.%m.%d}"
 # POWERLEVEL9K_TIME_FORMAT="%D{%H:%M \uf017 %Y.%m.%d}"
-POWERLEVEL9K_TIME_FORMAT="%D{\uf017 %H:%M \uf073 %Y.%m.%d}"
-
+# POWERLEVEL9K_TIME_FORMAT="%D{\uf017 %H:%M \uf073 %Y.%m.%d}"
+# POWERLEVEL9K_TIME_FORMAT="%D{%H:%M:%S \uE868  %d.%m.%y}"
+POWERLEVEL9K_TIME_FORMAT="%D{%m.%d %H:%M:%S}"
 
 # anyenv
 # - anyenv
@@ -466,3 +468,13 @@ eval "$(anyenv init -)"
 # zsh-completions
 fpath=(/usr/local/share/zsh-completions $fpath)
 
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /Users/ryu/git/nvc_sm/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/ryu/git/nvc_sm/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /Users/ryu/git/nvc_sm/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/ryu/git/nvc_sm/node_modules/tabtab/.completions/sls.zsh
+# tabtab source for slss package
+# uninstall by removing these lines or running `tabtab uninstall slss`
+[[ -f /Users/ryu/git/nvc_sm/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/ryu/git/nvc_sm/node_modules/tabtab/.completions/slss.zsh
