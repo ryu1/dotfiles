@@ -408,11 +408,10 @@ if has('vim_starting') && dein#check_install()
 endif
 " }}}
 
-
 " Airline
 " brew install ricty --with-powerline
 " 2016/08/05
-
+set ambiwidth=single
 set laststatus=2
 set showtabline=2 " 常にタブラインを表示
 set t_Co=256 " この設定がないと色が正しく表示されない
@@ -420,7 +419,6 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_idx_mode = 1
 let g:airline_theme='papercolor' "落ち着いた色調が好き
 let g:airline_powerline_fonts = 1
-
 "let g:airline_section_a = airline#section#create(['mode',' ','branch'])
 "let g:airline_section_b = airline#section#create_left(['ffenc','hunks','%f'])
 "let g:airline_section_c = airline#section#create(['filetype'])
