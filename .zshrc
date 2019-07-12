@@ -291,15 +291,15 @@ export PATH=/usr/local/bin:$PATH
 # Android SDK
 #export ANDROID_BIN=~/Development/adt-bundle-mac-x86_64-20130917/sdk/tools/android
 #export PATH=${PATH}:~/Development/adt-bundle-matcp://$(boot2docker ip 2>/dev/null):2375c-x86_64-20130917/sdk/platform-tools:~/Development/adt-bundle-mac-x86_64-20130917/sdk/tools
-export ANDROID_HOME=~/Library/Android
-export ANDROID_SDK_ROOT=$ANDROID_HOME/sdk;
-export PATH=$ANDROID_SDK_ROOT/platform-tools:$PATH;
-export PATH=$ANDROID_SDK_ROOT/emulator:$ANDROID_SDK_ROOT/tools:$PATH;
+#export ANDROID_HOME=~/Library/Android
+#export ANDROID_SDK_ROOT=$ANDROID_HOME/sdk;
+#export PATH=$ANDROID_SDK_ROOT/platform-tools:$PATH;
+#export PATH=$ANDROID_SDK_ROOT/emulator:$ANDROID_SDK_ROOT/tools:$PATH;
 
 # Gradle
-export GRADLE_HOME=/usr/local/Cellar/gradle/1.12
-export PATH=$PATH:$GRADLE_HOME/bin
-export GRADLE_OPTS=-Dorg.gradle.daemon=true
+#export GRADLE_HOME=/usr/local/Cellar/gradle/1.12
+#export PATH=$PATH:$GRADLE_HOME/bin
+#export GRADLE_OPTS=-Dorg.gradle.daemon=true
 
 # MacVim
 export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
@@ -342,17 +342,17 @@ alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"
 # Having additional scripts in your path can confuse software installed via
 # Homebrew if the config script overrides a system or Homebrew provided
 # script of the same name. We found the following "config" scripts:
-#    /Users/ryu/.pyenv/shims/python-config
+#    /Users/rye/.pyenv/shims/python-config
 #    /Users/ryu/.pyenv/shims/python2-config
 #    /Users/ryu/.pyenv/shims/python2.7-config
 #    /Users/ryu/.pyenv/shims/python3-config
 #    /Users/ryu/.pyenv/shims/python3.4-config
 #    /Users/ryu/.pyenv/shims/python3.4m-config
-alias brew="env PATH=${PATH/${HOME}\/\.pyenv\/shims:/} brew"
+#alias brew="env PATH=${PATH/${HOME}\/\.pyenv\/shims:/} brew"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/ryu/.sdkman"
-[[ -s "/Users/ryu/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/ryu/.sdkman/bin/sdkman-init.sh"
+#export SDKMAN_DIR="/Users/rya/.sdkman"
+#[[ -s "/Users/ryu/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/ryu/.sdkman/bin/sdkman-init.sh"
 
 # Xcode
 ## symbolicatecrash
@@ -380,7 +380,7 @@ zle -N peco-select-history
 bindkey '^r' peco-select-history
 
 ## OpenSSL
-# $ brea install openssl
+# $ brew install openssl
 # A CA file has been bootstrapped using certificates from the SystemRoots
 # keychain. To add additional certificates (e.g. the certificates added in
 # the System keychain), place .pem files in
@@ -468,13 +468,6 @@ eval "$(anyenv init -)"
 # zsh-completions
 fpath=(/usr/local/share/zsh-completions $fpath)
 
+# direnv
+eval "$(direnv hook zsh)"
 
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /Users/ryu/git/nvc_sm/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/ryu/git/nvc_sm/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /Users/ryu/git/nvc_sm/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/ryu/git/nvc_sm/node_modules/tabtab/.completions/sls.zsh
-# tabtab source for slss package
-# uninstall by removing these lines or running `tabtab uninstall slss`
-[[ -f /Users/ryu/git/nvc_sm/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/ryu/git/nvc_sm/node_modules/tabtab/.completions/slss.zsh

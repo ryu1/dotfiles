@@ -245,6 +245,8 @@ let java_allow_cpp_keywords=1
 
 "----------------------------------------------------
 " NeoBundle
+" $ mkdir ~/.vim/bundle
+" $ git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 "----------------------------------------------------
 
 " NeoBundle がインストールされていない時、
@@ -333,6 +335,8 @@ function! s:LoadBundles()
 
   autocmd filetype coffee,javascript setlocal shiftwidth=2 softtabstop=2 tabstop=2 expandtab
 
+  NeoBundle 'vim-airline/vim-airline'
+  NeoBundle 'vim-airline/vim-airline-themes'
   " ...
   " 読み込んだプラグインの設定
   " ...
