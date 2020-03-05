@@ -75,3 +75,5 @@ ln -fs ${DOTFILES_DIR}/.gitconfig ~/.gitconfig
 ln -fs ${DOTFILES_DIR}/.gitignore_global ~/.gitignore_global
 cp -rf ${DOTFILES_DIR}/.gitconfig.local ~/.gitconfig.local
 
+# ssh
+ln -fs ${DOTFILES_DIR}/.ssh ~/.ssh
